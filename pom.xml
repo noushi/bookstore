@@ -31,17 +31,55 @@
 		<version.exec.plugin>1.2.1</version.exec.plugin>
 
 		<!-- maven-compiler-plugin -->
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 
 		<!-- test dependencies versions -->
 		<junit.version>4.8.2</junit.version>
 		<arquillian.version>1.1.6.Final</arquillian.version>
 		<arquillian.drone.version>1.3.1.Final</arquillian.drone.version>
 		<selenium.version>2.29.0</selenium.version>
-
+		<version.jboss.bom.eap>7.0.4.GA</version.jboss.bom.eap>
 	</properties>
+	<repositories>
+		<repository>
+			<id>training</id>
+			<name>Red Hat Training</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
+		</repository>
+		<repository>
+                        <id>training2</id>
+                        <name>Red Hat Training2</name>
+                        <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+                </repository>
 
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>training</id>
+			<name>Red Hat Trainig</name>
+			<url>https://maven.repository.redhat.com/ga/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
+                        <id>training2</id>
+                        <name>Red Hat Trainig2</name>
+                        <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+                        <layout>default</layout>
+                        <snapshots>
+                                <enabled>true</enabled>
+                        </snapshots>
+                        <releases>
+                                <updatePolicy>never</updatePolicy>
+                        </releases>
+                </pluginRepository>
+	</pluginRepositories>
 	<dependencyManagement>
 		<dependencies>
 			<!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any 
