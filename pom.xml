@@ -21,7 +21,7 @@
 		<version.jboss.spec.javaee.6.0>1.0.4.Final-redhat-1</version.jboss.spec.javaee.6.0>
 		<version.org.jboss.jbossts.jta.narayana-jta>4.17.15.Final-redhat-5</version.org.jboss.jbossts.jta.narayana-jta>
 		<version.weld.se>1.1.13.Final-redhat-1</version.weld.se>
-		<org.richfaces.bom.version>4.3.7.Final-redhat-1</org.richfaces.bom.version>
+		<org.richfaces.bom.version>4.5.13.Final</org.richfaces.bom.version>
 		<drools.version>6.0.3-redhat-4</drools.version>
 
 		<!-- other plugin versions -->
@@ -52,7 +52,6 @@
                         <name>Red Hat Training2</name>
                         <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
                 </repository>
-
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -99,13 +98,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
+<!--			<dependency>
 				<groupId>org.richfaces</groupId>
 				<artifactId>richfaces-bom</artifactId>
 				<version>${org.richfaces.bom.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+-->
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
 				<artifactId>arquillian-bom</artifactId>
@@ -293,17 +293,12 @@
 
 		<!-- Import the RichFaces core library -->
 		<dependency>
-			<groupId>org.richfaces.core</groupId>
-			<artifactId>richfaces-core-impl</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>guava</artifactId>
-					<groupId>com.google.guava</groupId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.richfaces</groupId>
+			<artifactId>richfaces</artifactId>
+			<version>${org.richfaces.bom.version}</version>
 		</dependency>
 		<!-- Import the RichFaces components -->
-		<dependency>
+<!--		<dependency>
 			<groupId>org.richfaces.ui</groupId>
 			<artifactId>richfaces-components-ui</artifactId>
 			<exclusions>
@@ -313,9 +308,9 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+-->
 		<!-- Import the Atmosphere framework for a4j:push -->
-		<dependency>
+<!--		<dependency>
 			<groupId>org.atmosphere</groupId>
 			<artifactId>atmosphere-runtime</artifactId>
 			<exclusions>
@@ -325,6 +320,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+-->
 		<!-- Arquillian/JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
